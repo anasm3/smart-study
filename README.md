@@ -1,1 +1,1 @@
-# smart-study
+smart-study
