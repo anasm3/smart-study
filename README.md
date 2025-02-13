@@ -1,1 +1,1 @@
-smart-study
+SMART STUDY WEB COMPANION

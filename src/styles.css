@@ -1,50 +1,386 @@
+/* Global Styles */
 body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #eef2f3;
+  font-family: 'Roboto', sans-serif; /* Clean, professional font */
+  margin: 0;
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  margin: 0;
+  min-height: 100vh;
+  background-color: #f5f7fa; /* Soft light gray background */
+  color: #333;
+  flex-direction: column;
+  padding: 30px;
 }
 
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #007bff; /* Professional blue */
+  font-weight: 600;
+}
+
+/* Container for all components */
 .container {
   width: 100%;
-  max-width: 500px;
-  text-align: center;
-  background: white;
+  max-width: 900px; /* Wider container for a more spacious look */
+  padding: 25px;
+  background: #ffffff; /* White background for a clean look */
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  box-sizing: border-box;
+  margin: 30px 0; /* Added margin around the container */
+}
+
+/* Card Styles */
+.card {
+  margin-bottom: 30px;
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.card {
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 10px;
   background: #ffffff;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  text-align: center;
 }
 
-button {
+/* Button Styles */
+.card button {
   background: #007bff;
   color: white;
   border: none;
-  padding: 10px 15px;
+  padding: 12px 20px;
   border-radius: 5px;
   cursor: pointer;
-  transition: background 0.3s;
-  margin: 5px;
+  transition: background 0.3s ease, transform 0.2s ease;
+  font-size: 1.1rem;
+  width: 100%;
+  margin-top: 20px;
 }
 
-button:hover {
+.card button:hover {
   background: #0056b3;
+  transform: scale(1.05); /* Slight button hover effect */
 }
 
-input {
-  padding: 8px;
-  margin: 5px;
+/* Input Fields */
+input, select {
+  padding: 12px;
+  margin: 12px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+input:focus, select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Quote Styling */
+.card p {
+  font-size: 1.2rem;
+  color: #555;
+  font-style: italic;
+}
+
+/* Timer Component Styling */
+.timer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* More prominent shadow */
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.timer-label {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.timer {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #007bff;
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f0f0f0;
+  width: 120px;
+  text-align: center;
+}
+
+.timer button {
+  padding: 12px 20px;
+  font-size: 1.1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.timer button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Motivational Quote Styling */
+.motivational-container {
+  padding: 25px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.motivational-container p {
+  font-size: 1.3rem;
+  color: #555;
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* Settings Component Styling */
+.settings-container {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.settings-header {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #007bff;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.settings-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+
+.settings-option label {
+  color: #333;
+}
+
+.settings-option input {
+  padding: 12px;
+  font-size: 1rem;
+  width: 150px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.settings-option select {
+  padding: 12px;
+  font-size: 1rem;
+  width: 160px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+/* Button for saving settings */
+.save-settings-btn {
+  padding: 15px 25px;
+  background-color: #28a745;
+  color: white;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.save-settings-btn:hover {
+  background-color: #218838;
+}
+
+/* Button to reset settings */
+.reset-settings-btn {
+  padding: 15px 25px;
+  background-color: #dc3545;
+  color: white;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.reset-settings-btn:hover {
+  background-color: #c82333;
+}
+
+/* Study History Component Styling */
+.history-container {
+  background-color: #ffffff;
+  padding: 25px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  margin-bottom: 30px;
+}
+
+.history-container ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.history-container ul li {
+  background-color: #e8f0fe;
+  margin: 10px 0;
+  padding: 15px 25px;
+  border-radius: 6px;
+  font-size: 18px;
+  border-left: 5px solid #3f51b5;
+}
+
+.history-container ul li span {
+  font-weight: bold;
+  color: #303f9f;
+}
+
+/* Quiz Component Styling */
+.quiz-container {
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.quiz-question {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.quiz-options {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.quiz-options li {
+  margin-bottom: 15px;
+}
+
+.quiz-options button {
+  width: 100%;
+  padding: 14px 20px;
+  margin-bottom: 12px;
+  background-color: #f0f0f0;
   border: 1px solid #ddd;
   border-radius: 5px;
-  max-width: 100px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.quiz-options button:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Correct Answer Styling */
+.correct {
+  background-color: #28a745;
+  color: white;
+}
+
+/* Incorrect Answer Styling */
+.incorrect {
+  background-color: #dc3545;
+  color: white;
+}
+
+/* Button to submit the quiz */
+.submit-btn {
+  padding: 14px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  margin-top: 20px;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Quiz Results Styling */
+.quiz-result {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.quiz-result.correct {
+  color: #28a745;
+}
+
+.quiz-result.incorrect {
+  color: #dc3545;
+}
+
+/* Logout Button Styling */
+.logout-container {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.logout-container button {
+  padding: 14px 20px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  width: 100%;
+}
+
+.logout-container button:hover {
+  background-color: #e53935;
+  transform: scale(1.05); /* Button hover effect */
+}
+
+.delete-quiz-button {
+  background-color: transparent;
+  border: none;
+  color: #f44336;
+  font-size: 20px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.delete-quiz-button:hover {
+  color: #d32f2f;
 }
